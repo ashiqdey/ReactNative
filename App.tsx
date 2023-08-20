@@ -21,6 +21,7 @@ import {
 import { styles } from './styles';
 import Inputs from './components/Inputs';
 import Flatlists from './components/Flatlists';
+import ArrayRender from './components/ArrayRender';
 
 function App(): JSX.Element {
   return (
@@ -28,6 +29,9 @@ function App(): JSX.Element {
       <Text>hello</Text>
       <Inputs />
       <Flatlists />
+      {/* <ScrollView> */}
+      <ArrayRender />
+      {/* </ScrollView> */}
     </View>
   );
 }
