@@ -19,28 +19,15 @@ import {
   TextInput,
 } from 'react-native';
 import { styles } from './styles';
+import Inputs from './components/Inputs';
+import Flatlists from './components/Flatlists';
 
 function App(): JSX.Element {
-  const [clicked, setClicked] = useState('');
-  const [value, setValue] = useState('');
-  // const isDarkMode = useColorScheme() === 'dark';
-
-  const callfunc = () => {
-    setClicked(value);
-  };
-
   return (
     <View style={{ padding: 20 }}>
-      <Text style={styles.text}>Hello ashiq {clicked}</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Enter your name"
-        value={value}
-        onChangeText={text => setValue(text)}
-      />
-      <Text style={styles.button} onPress={callfunc}>
-        Submit
-      </Text>
+      <Text>hello</Text>
+      <Inputs />
+      <Flatlists />
     </View>
   );
 }
