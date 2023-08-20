@@ -5,8 +5,8 @@
  * @format
  */
 
-import React, {useState} from 'react';
-import type {PropsWithChildren} from 'react';
+import React, { useState } from 'react';
+import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -17,6 +17,7 @@ import {
   View,
   Button,
 } from 'react-native';
+import { styles } from './styles';
 
 function App(): JSX.Element {
   const [clicked, setClicked] = useState(false);
@@ -27,20 +28,15 @@ function App(): JSX.Element {
   };
 
   return (
-    <View style={{backgroundColor: 'pink'}}>
+    <View style={{ backgroundColor: 'pink', padding: 20 }}>
       <Text style={styles.text}>
-        Hello {clicked ? 'Clicked' : 'not clciked'}
+        Hello ashiq {clicked ? 'Clicked' : 'not clciked'}
       </Text>
-      <Button title="Submit" onPress={callfunc} />
+      <Text style={styles.button} onPress={callfunc}>
+        Submit
+      </Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  text: {
-    backgroundColor: 'pink',
-    color: 'blue',
-  },
-});
 
 export default App;
