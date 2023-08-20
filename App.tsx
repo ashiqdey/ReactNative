@@ -16,22 +16,28 @@ import {
   Text,
   View,
   Button,
+  TextInput,
 } from 'react-native';
 import { styles } from './styles';
 
 function App(): JSX.Element {
-  const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState('');
+  const [value, setValue] = useState('');
   // const isDarkMode = useColorScheme() === 'dark';
 
   const callfunc = () => {
-    setClicked(!clicked);
+    setClicked(value);
   };
 
   return (
-    <View style={{ backgroundColor: 'pink', padding: 20 }}>
-      <Text style={styles.text}>
-        Hello ashiq {clicked ? 'Clicked' : 'not clciked'}
-      </Text>
+    <View style={{ padding: 20 }}>
+      <Text style={styles.text}>Hello ashiq {clicked}</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Enter your name"
+        value={value}
+        onChangeText={text => setValue(text)}
+      />
       <Text style={styles.button} onPress={callfunc}>
         Submit
       </Text>
